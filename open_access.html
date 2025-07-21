@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Pelatihan Open Access PIPK - e-Learning Pengantar, Matriks Risiko, dan Proses Bisnis PIPK."/>
+  <title>Open Access</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #ffffff;
+      min-height: 100vh;
+    }
+
+    .header {
+      background: #05284e;
+      padding: 15px 26px;
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      height: 40px;
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 40px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .logo-fallback {
+      width: 40px;
+      height: 40px;
+      background: #d0c05b;
+      border-radius: 50%;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: #1f2937;
+      font-size: 18px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-link {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 20px;
+    }
+
+    .main-container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: calc(100vh - 120px);
+      padding: 40px 20px;
+      background: #f8f9fa;
+      position: relative;
+    }
+
+    .left-side-image {
+      position: absolute;
+      left: 40px;
+      top: -1px;
+      width: 140px;
+      height: 200px;
+      border-radius: 8px;
+      z-index: 10;
+      overflow: hidden;
+    }
+
+    .left-side-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .right-side-image {
+      position: absolute;
+      right: 35px;
+      top: 30px;
+      width: 160px;
+      height: 140px;
+      border-radius: 8px;
+      z-index: 10;
+      overflow: hidden;
+    }
+
+    .right-side-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 6px;
+    }
+
+    .content {
+      max-width: 1200px;
+      width: 100%;
+      margin: auto;
+      padding: 0 120px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 45px;
+      color: #05284e;
+      font-weight: 700;
+      margin-bottom: 60px;
+    }
+
+    .link-list {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      margin-bottom: 0;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .link-row {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .link-row.bottom-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 15px;
+      justify-items: center;
+    }
+
+    .link-item {
+      background: #05284e;
+      color: #d0c05b;
+      padding: 35px 50px;
+      border-radius: 35px;
+      font-size: 20px;
+      font-weight: 600;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(5, 40, 78, 0.2);
+      text-align: center;
+      line-height: 1.4;
+      height: 100px;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .link-item:hover {
+      transform: translateY(-4px);
+      background: #073961;
+      box-shadow: 0 12px 24px rgba(5, 40, 78, 0.3);
+    }
+
+    .footer {
+      background: #d0c05b;
+      color: #1f2937;
+      text-align: center;
+      padding: 14px 8px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    @media (max-width: 768px) {
+      .header {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .left-side-image {
+        left: 20px;
+        top: 10px;
+        width: 80px;
+        height: 120px;
+      }
+
+      .right-side-image {
+        right: 20px;
+        top: 20px;
+        width: 100px;
+        height: 80px;
+      }
+
+      .content {
+        padding: 0 20px;
+      }
+
+      .nav-link {
+        font-size: 16px;
+      }
+
+      h1 {
+        font-size: 40px;
+        margin-bottom: 40px;
+      }
+
+      .link-item {
+        font-size: 18px;
+        padding: 30px 40px;
+        height: 90px;
+      }
+
+      .link-list {
+        gap: 30px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .link-item {
+        font-size: 16px;
+        padding: 25px;
+        height: 80px;
+      }
+
+      .left-side-image {
+        left: 10px;
+        top: 10px;
+        width: 70px;
+        height: 100px;
+      }
+
+      .right-side-image {
+        right: 10px;
+        top: 20px;
+        width: 90px;
+        height: 70px;
+      }
+
+      .content {
+        padding: 0 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <div class="header">
+    <div class="logo">
+      <img src="Logo.png" alt="Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <div class="logo-fallback">
+        <i class="fas fa-university"></i>
+      </div>
+    </div>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">FAQ</a>
+      <a href="open_access.html" class="nav-link">Open Access</a>
+    </div>
+  </div>
+
+  <!-- Main -->
+  <div class="main-container">
+    <!-- Left image -->
+    <div class="left-side-image">
+      <img src="Free.png" alt="Free">
+    </div>
+
+    <!-- Right image (Sertifikat) -->
+    <div class="right-side-image">
+      <img src="Sertifikat.png" alt="Sertifikat">
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+      <h1>PELATIHAN OPEN ACCESS PIPK</h1>
+      <div class="link-list">
+        <div class="link-row top-row">
+          <a href="https://klc2.kemenkeu.go.id/course/e-learningpengantar-pengendalian-intern-atas-pelaporankeuangan-pipk-open-access-32977a0b/overview" target="_blank" class="link-item">
+            E-Learning Pengantar PIPK
+          </a>
+          <a href="https://klc2.kemenkeu.go.id/course/e-learning-matriks-risiko-pengendalian-dalamkerangka-pipk-open-access-956058f3/overview" target="_blank" class="link-item">
+            E-Learning Matriks Risiko Pengendalian dalam Kerangka PIPK
+          </a>
+        </div>
+        <div class="link-row bottom-row">
+          <a href="https://klc2.kemenkeu.go.id/course/e-learning-prosesbisnis-penerapan-pengendalian-intern-atas-pelaporankeuangan-pipk-open-access-f8a1ed98/overview" target="_blank" class="link-item">
+            E-Learning Proses Bisnis Penerapan PIPK
+          </a>
+          <a href="https://klc2.kemenkeu.go.id/course/e-learning-proses-bisnis-penilaian-pengendalianintern-atas-pelaporan-keuangan-pipk-open-access-2e083aad/overview" target="_blank" class="link-item">
+            E-Learning Proses Bisnis Penilaian PIPK
+          </a>
+          <a href="https://klc2.kemenkeu.go.id/course/e-learning-proses-bisnis-reviu-pipk-open-access31fb954f/overview" target="_blank" class="link-item">
+            E-Learning Proses Bisnis Reviu PIPK
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    Copyright © 2025 PUSDIKLAT ANGGARAN DAN PERBENDAHARAAN. All rights reserved.
+  </div>
+</body>
+</html>
